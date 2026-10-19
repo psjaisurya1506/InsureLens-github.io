@@ -1,0 +1,37 @@
+{
+  "name": "insurelens",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs",
+    "predev": "node scripts/doctor.mjs",
+    "dev": "next dev",
+    "dev:webpack": "next dev --webpack",
+    "prebuild": "node scripts/doctor.mjs",
+    "build": "next build",
+    "build:webpack": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true});require('fs').rmSync('out',{recursive:true,force:true});console.log('Cleaned .next and out')\"",
+    "reset": "node -e \"for (const d of ['.next','out','node_modules']) require('fs').rmSync(d,{recursive:true,force:true});console.log('Removed .next, out and node_modules - now run: npm install')\""
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
